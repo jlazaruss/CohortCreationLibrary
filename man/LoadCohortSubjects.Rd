@@ -2,7 +2,7 @@
 % Please edit documentation in R/LoadCohortSubjects.R
 \name{LoadCohortSubjects}
 \alias{LoadCohortSubjects}
-\title{Title}
+\title{Load in Patients}
 \usage{
 LoadCohortSubjects(
   project_name,
@@ -13,11 +13,27 @@ LoadCohortSubjects(
 )
 }
 \arguments{
-\item{end_date}{}
+\item{project_name}{string}
+
+\item{data_base_name}{string}
+
+\item{condition_concept}{integer}
+
+\item{start_date}{date}
+
+\item{end_date}{date}
 }
 \value{
-
+data frame
 }
 \description{
-Title
+Returns information based on the condition filtered and returns them in
+between a start date and an end date. It joins the condition_occurrence,
+person, concept, and visit_occurrence  tables to retrieve the information
+about the person and the condition diagnosed.
+}
+\examples{
+LoadCohortSubjects("yhcr-prd-phm-bia-core", "CY_CDM_V1_50k_Random",
+                   condition_concept = 317009,
+                   start_date = NULL, end_date = NULL)
 }

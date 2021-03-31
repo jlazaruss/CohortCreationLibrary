@@ -1,12 +1,12 @@
-Package: CohortCreation
-Title: Make Factors Less Aggravating
+Package: CohortCreationLibrary
+Title: Query the OMOP Common Data Model
 Version: 0.0.0.9000
 Authors@R:
-    person("Jane", "Doe", email = "jane@example.com", role = c("aut", "cre"))
-Description: Factors have driven people to extreme measures, like ordering
-    custom conference ribbons and laptop stickers to express how HELLNO we
-    feel about stringsAsFactors. And yet, sometimes you need them. Can they
-    be made less maddening? Let's find out.
+    person("James", "Lazarus", email = "jamesgeorgelazarus@gmail.com", role = c("aut", "cre"))
+Description: Obtaining the data necessary from the OMOP CDM can be a 
+    challenging and time consuming process. The goal of this library 
+    is to make the retrieval of cohorts from the CDM as easy and easy 
+    as possible.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -1,15 +1,24 @@
-#' Title
+#' Load in Patients
 #'
-#' @param project_name
-#' @param data_base_name
-#' @param condition_concept
-#' @param start_date
-#' @param end_date
+#' Returns information based on the condition filtered and returns them in
+#' between a start date and an end date. It joins the condition_occurrence,
+#' person, concept, and visit_occurrence  tables to retrieve the information
+#' about the person and the condition diagnosed.
 #'
-#' @return
+#'
+#' @param project_name string
+#' @param data_base_name string
+#' @param condition_concept integer
+#' @param start_date date
+#' @param end_date date
+#'
+#' @return data frame
 #' @export
 #'
 #' @examples
+#' LoadCohortSubjects("yhcr-prd-phm-bia-core", "CY_CDM_V1_50k_Random",
+#'                    condition_concept = 317009,
+#'                    start_date = NULL, end_date = NULL)
 LoadCohortSubjects <- function(project_name, data_base_name,
                                condition_concept = NULL,
                                start_date = NULL, end_date = NULL)
@@ -40,7 +49,6 @@ LoadCohortSubjects <- function(project_name, data_base_name,
                  paste("'",toString(end_date),"'", sep = ""),
                  sep = " ")
   } #Filtering by date
-  print(sql)
   return(bigrquery::bq_table_download(bigrquery::bq_project_query(project_name, sql)))
 }
 
